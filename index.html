@@ -1,0 +1,183 @@
+<!--My dream business
+] <h1> ถึง <h6>: ชื่อร้าน/ชื่อธุรกิจต้องมาอันดับหนึ่ง (h1) และแบ่งโซนเมนูหรือบริการ (h2, h3)
+[ ] <img>: ใส่รูปโลโก้ร้าน รูปหน้าร้าน หรือรูปสินค้าเด่น 
+[ ] <p>: คำโปรยเรียกลูกค้า หรือประวัติความเป็นมาของร้านแบบปั่นๆ
+[ ] <ul>: ลิสต์บริการเสริม หรือสิ่งอำนวยความสะดวก (เช่น มีที่จอดรถ, Wi-Fi แรง,คนขายหน้าตาดี)
+[ ] <ol>: ลิสต์แบบมีลำดับ เช่น 3 เมนูขายดีที่ต้องสั่ง หรือ 3 ขั้นตอนการสั่งซื้อ (โอน-จ่าย-จบ)
+[ ] <a>: ทำลิงก์เชื่อมไปหา Google Maps (พิกัดร้าน), หน้าเพจร้าน, หรือแอพ Delivery
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barkbowl</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <section>
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION BAR ตั้งชื่อ class lolg ไว้ตกแต่ง css + พอกด logo จะเด้งหน้าบนสุดและมี <a ลิ้งค์ภายในหน้่าเดียวกัน 
+    ════════════════════════════════════════════ -->
+    <nav>
+      <a class="logo" href="#"> ੯‧̀͡⬮ Barkbowl</a>
+      <ul>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#branches">Brances</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO - -แบ่ง class ไว้ตกแต่ง id เอาไปเรียกดู
+    ════════════════════════════════════════════ -->
+    <div class="container">
+      <section class="hero" id="home">
+        <h4>open farm kitchen · since 2022</h4>
+        <div class="dogs_emoji">૮ ˙ ﻌ˙ ა ૮ – ﻌ–ა ૮ ’ﻌ｀ა</div>
+        <p>
+          A mountain-top haven for pups and their people. From
+          <strong>homemade dog treats</strong> <br />to endless forest runs,
+          Barkbowl is where every dog's mountain dream comes true, one wag at a
+          time.
+        </p>
+        <h6>Scroll to explore · Someone patiently waiting</h6>
+      </section>
+    </div>
+
+    <hr />
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT US — IMG
+    ════════════════════════════════════════════ -->
+    <section class="about" id="aboutus">
+      <h2>Our Story</h2>
+      <h3>The Founders' Night Out</h3>
+      <div class="story-content">
+        <img
+          src="/IMG5080.JPG"
+          alt="Barkbowl Founders Dinner"
+          width="300"
+          class="founders-img"
+        />
+
+        <p>
+          It all started with an open kitchen and an unpredictable night.
+          <strong>Barkbowl</strong> wasn't born in a boardroom, but at this very
+          table. We believe great ideas can come from unexpected places — like
+          this legendary evening when a group of <i>old friends</i>
+          (including a spotted leader, a watchful senior, a joyful black
+          guardian, and a very fluffy one) decided to settle in for a serious
+          discussion over some bottles of white wine.
+        </p>
+        <p class="mission">
+          <i>As the wine poured, the dream became clear:</i>
+          to create a cozy highland retreat thats just as fun and welcoming for
+          dogs and their people as this unforgettable dinner was. Every handmade
+          treat and cozy nook at Barkbowl is inspired by the whimsical spirit of
+          that magical night.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ═══════════════════════════════════════════
+         PRODUCT — Order List
+    ════════════════════════════════════════════ -->
+
+    <section class="products" id="recipe">
+      <h2>🏆 Farm Bestsellers: Dog-Approved</h2>
+      <div class="product-list">
+        <ol>
+          <li>
+            <h3>Vintage "Bark-deaux" Juice</h3>
+            <p>
+              Our <strong>aged pumpkin & corn blend</strong>. Non-alcoholic, but
+              crafted for those who want to join the founders' wine night.
+              Full-bodied, rich in fiber, and perfect for sunset howling.
+            </p>
+            <span class="price">$999</span>
+          </li>
+
+          <li>
+            <h3>Highland Highland-Jerky</h3>
+            <p>
+              Hand-sliced <strong>grilled pork</strong>, air-dried in the
+              mountain breeze. So good that Cereal once tried to trade his
+              favorite ball for an extra piece. High protein, zero drama.
+            </p>
+            <span class="price">$999</span>
+          </li>
+
+          <li>
+            <h3>Snowman's Nose Buttons</h3>
+            <p>
+              Actually just <strong>dehydrated organic carrots</strong>, but we
+              told the pups they're rare snowman parts. Crunchy, sweet, and
+              excellent for nighttime vision during forest patrols.
+            </p>
+            <span class="price">$999</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ═══════════════════════════════════════════
+         BRANCHES  — a href links จะสร้างฟอร์ม ให้เลือก 
+    ════════════════════════════════════════════ -->
+
+    <section id="branches">
+      <h2>Our Branches Around the World</h2>
+      <p>Our new coming branch this winter!</p>
+
+      <ul>
+        <li class="branch-item">
+          <strong>Greenland Branch</strong>
+
+          <p>Nuuk · Perpetual -10°C. Perfect for snowmen that never melt.</p>
+        </li>
+
+        <li class="branch-item">
+          <strong>North Pole Branch</strong>
+
+          <p>
+            90°N · Partnered with Santa. Delivering handmade snowmen worldwide.
+          </p>
+        </li>
+
+        <li class="branch-item">
+          <strong class="branch-name">Bear Cave Branch</strong>
+
+          <p>Austria · Located in Eisriesenwelt. Chill vibes only.</p>
+        </li>
+
+        <li class="branch-item">
+          <strong class="branch-name">South Pole</strong>
+          <p>Managed by penguins. 3-meter tall snow sculptures.</p>
+        </li>
+
+        <li class="branch-item">
+          <strong> ISS Branch </strong>
+
+          <p>
+            Low Earth Orbit · Zero-gravity snowmen! (Reservations opening soon).
+          </p>
+        </li>
+      </ul>
+    </section>
+
+  
+    <section class="'video">
+<iframe width="350" height="auto" 
+src="https://www.youtube.com/embed/RBc3EmeJfQg?si=tVreQL5-zEv2Giw2" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+  </body>
+</html>

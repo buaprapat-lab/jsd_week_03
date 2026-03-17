@@ -1,0 +1,116 @@
+/* ขอฝึกเรียนเพิ่มเติมนะคะ
+1. Global Reset: ล้างค่าเริ่มต้นของ Browser ให้ทุกอย่างเริ่มจาก 0 จะได้จัดหน้าตาได้แม่นยำ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* คำนวณขนาดกล่องรวม Padding และ Border ไม่ให้กล่องขยายใหญ่เกินสั่ง */
+  margin: 0; /* เอาขอบขาวๆ ด้านนอกออกให้หมด */
+  padding: 0; /* เอาพื้นที่ว่างด้านในออกให้หมด */
+}
+
+/* 2. Body: กำหนดบรรยากาศโดยรวมของหน้าเว็บ */
+body {
+  font-family:
+    "Space Mono", monospace; /* เลือกฟอนต์หลัก ถ้าไม่มีให้ใช้ฟอนต์ไม่มีหัวพื้นฐาน */
+  font-weight: 200;
+  font-size: 0.8rem; /* ปรับตัวอักษรให้ดูบางเบา สบายตา */
+  background: linear-gradient(
+    /* พื้นหลังไล่เฉดสี 160 องศา จากขาวไปฟ้าหมอก */ 160deg,
+    #ffffff 0%,
+    #f0f4f8 35%,
+    #d9e2ec 70%,
+    #bcccdc 100%
+  );
+  min-height: 100vh; /* สั่งให้ความสูงพื้นหลังคลุมเต็มหน้าจอพอดี */
+  line-height: 1.2; /* เว้นระยะห่างระหว่างบรรทัดให้อ่านง่าย */
+  color: #102a43; /* สีตัวหนังสือหลัก (สีน้ำเงินเข้มเกือบดำ) */
+  display: flex; /* เปิดใช้ Flexbox เพื่อจัดวาง Layout */
+  justify-content: center; /* จัดให้เนื้อหาอยู่กึ่งกลางแนวนอน */
+  align-items: center; /* จัดให้เนื้อหาอยู่กึ่งกลางแนวตั้ง */
+  padding: 20px; /* เว้นระยะรอบๆ ขอบจอไม่ให้เนื้อหาชิดเกินไปเวลาดูในมือถือ */
+}
+
+/* 3. Profile Card: ตกแต่งกล่องโปรไฟล์ของผู้ก่อตั้ง */
+.profile-card {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.537
+  ); /* สีขาวโปร่งแสง (เพื่อให้เห็น Gradient ข้างหลัง) */
+  border-radius: 20px; /* ทำมุมกล่องให้มนดูนุ่มนวล */
+  padding: 40px; /* เว้นที่ว่างภายในกล่องให้ดูไม่อึดอัด */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* ใส่เงานุ่มๆ ให้กล่องดูลอยขึ้นมา */
+  backdrop-filter: blur(
+    30px
+  ); /* เอฟเฟกต์กระจกฝ้า ทำให้สิ่งที่อยู่หลังกล่องเบลอ */
+  max-width: 600px; /* กำหนดความกว้างสูงสุดของกล่องไม่ให้บานเกินไป */
+  text-align: center; /* สั่งให้ทุกอย่างในกล่องอยู่ตรงกลาง */
+}
+
+/* 4. Profile Image: ตกแต่งรูปภาพประจำตัว */
+.profile-img {
+  width: 150px; /* กำหนดความกว้างรูป */
+  height: 150px; /* กำหนดความสูงรูป (เท่ากันเพื่อให้เป็นวงกลม) */
+  border-radius: 50%; /* ตัดขอบรูปให้กลมดิก */
+  object-fit: cover; /* สั่งให้รูปขยายเต็มพื้นที่วงกลมโดยที่หน้าไม่เบี้ยว */
+  border: 5px solid white; /* ใส่ขอบสีขาวหนาๆ เหมือนกรอบรูป */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* ใส่เงาใต้รูปให้ดูมีมิติ */
+  margin-bottom: 20px; /* เว้นระยะห่างด้านล่างรูปก่อนถึงชื่อ */
+}
+
+/* 5. Typography: ปรับแต่งหัวข้อและข้อความ */
+h1 {
+  font-weight: 700; /* ชื่อเจ้าของฟาร์มต้องตัวหนาที่สุด */
+  color: #102a43;
+  margin-bottom: 10px;
+}
+h2 {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #486581;
+  margin: 15px 0 10px 0;
+  border-bottom: 2px solid #bcccdc; /* ใส่เส้นใต้หัวข้อเล็กลงมาหน่อย */
+  display: inline-block; /* สั่งให้เส้นใต้ยาวเท่าตัวหนังสือพอดี */
+  padding-bottom: 3px;
+}
+p.bio {
+  font-style: italic; /* ตัวอักษรเอียงสำหรับคำโปรย (Bio) */
+  color: #627d98;
+  margin-bottom: 30px;
+}
+
+/* 6. Lists: จัดระเบียบรายการสกิลและเป้าหมาย */
+ul,
+ol {
+  font-size: 0.8rem;
+  list-style-position: inside; /* ให้จุด/ตัวเลข อยู่ข้างในขอบของรายการ */
+  text-align: left; /* ตัวหนังสือในลิสต์ให้ชิดซ้าย (อ่านง่ายกว่า) */
+  margin: 0 auto; /* จัดกลุ่มลิสต์ให้อยู่กลางกล่อง */
+  max-width: 80%; /* บีบความกว้างลิสต์ไม่ให้กว้างเกินไป */
+  color: #486581;
+}
+li {
+  margin-bottom: 8px;
+} /* ระยะห่างระหว่างแต่ละข้อ */
+
+/* 7. Buttons & Links: ตกแต่งปุ่ม Social Media */
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* เว้นระยะห่างระหว่างปุ่ม */
+}
+.social-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: hwb(27 51% 29%); /* สีส้มอิฐอ่อนๆ (HWB format) */
+  color: white; /* สีตัวหนังสือบนปุ่ม */
+  text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+  border-radius: 25px; /* ทำปุ่มให้เป็นรูปทรงแคปซูล */
+  font-weight: 500;
+  transition: background-color 0.3s; /* สั่งให้สีเปลี่ยนแบบนุ่มๆ เวลาเอาเมาส์ไปชี้ */
+}
+.social-btn:hover {
+  background-color: #95afcb; /* เปลี่ยนสีปุ่มเวลาเอาเมาส์ไปชี้ (Hover) */
+}

@@ -1,0 +1,92 @@
+/* ── CSS Variables ─────────────────────────────── */
+:root {
+  --cloud-0: #ffffff; /* ตั้งค่าตัวแปร */
+  --cloud-1: #f0f4f8;
+  --cloud-2: #d9e2ec;
+  --sky: #bcccdc;
+  --ink: #102a43; /* สีตัวหนังสือเข้มๆ */
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(
+    160deg,
+    var(--cloud-0) 0%,
+    var(--cloud-1) 35%,
+    var(--cloud-2) 70%,
+    var(--sky) 100%
+  );
+}
+
+/* ── NAV ────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(247, 249, 252, 0.6);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(107, 156, 201, 0.15);
+}
+nav .logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+}
+nav ul li a:hover {
+  color: var(--sky);
+}
+
+/* ── NAV ────────────────────────────────────────── */
+nav {
+  position: sticky; /* position: sticky; + top: 0;: สั่งให้แถบเมนูติดหนึบ */
+  z-index: 10; /* อยู่ที่ด้านบนสุดของหน้าจอเสมอ */
+  padding: 1.2rem 2rem; /* ห่างขอบบน ขอบข้าง */
+  display: flex;
+  justify-content: space-between; /* สั่งให้ โลโก้ไปชิดซ้ายสุด รายการเมนูไปชิดขวาสุด โดยเว้นที่ว่างตรงกลางไว้ */
+  align-items: center; /* โลโก้ text ระนาบกึ่งกลางแนวตั้งพอดีกัน */
+  background: rgba(247, 249, 252, 0.6); /* o o o alpha โปร่งใส) */
+  backdrop-filter: blur(14px); /* "ข้างหลัง" แถบเมนูเกิดการเบลอ */
+  border-bottom: 1px solid rgba(107, 156, 201, 0.15); /* ตีเส้นขอบล่างบางๆ สีฟ้าจางๆ เพื่อแยกส่วนเมนูออกจากเนื้อหาให้ดูมีมิติ */
+}
+nav .logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+}
+nav ul li a:hover {
+  color: var(--sky);
+}
