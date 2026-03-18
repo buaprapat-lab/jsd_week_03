@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barkbowl | Register</title>
+
+    <style>
+      #form {
+        background: #faf9f6;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        max-width: 500px;
+        width: 100%;
+      }
+
+      /* 4. แต่งช่องกรอกข้อมูล (Text, Select, Textarea) */
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box; /* สำคัญ! เพื่อให้ padding ไม่ทำให้กล่องบวมเกิน 100% */
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="form">
+      <h3>Register your dog here!</h3>
+      <form action="/register-dog" method="POST">
+        <div>
+          <label for="dname">·ᴥ· What's your pup name?</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="dname"
+            name="dog_name"
+            placeholder="name?.."
+            required
+          />
+        </div>
+
+        <div>
+          <label for="breed">·ᴥ· Breed</label>
+        </div>
+        <div>
+          <select id="breed" name="dog_breed">
+            <option value="dalmatian">Dalmatian</option>
+            <option value="Weimaraner">Weimaraner</option>
+            <option value="german_shepherd">German Shepherd</option>
+            <option value="Labrador_Retriever">Labrador Retriever</option>
+            <option value="Beagle">Beagle</option>
+            <option value="Poodle">Poodle</option>
+            <option value="Chihuahua">Chihuahua</option>
+            <option value="Dachshund">Dachshund</option>
+            <option value="Bichon_frise">Bichon Frise</option>
+            <option value="Chow_chow">Chow Chow</option>
+            <option value="Shin_tzu">Shin Tzu</option>
+            <option value="other">Other..</option>
+          </select>
+        </div>
+
+        <p>·ᴥ· เลือกนิสัยที่ใช่ (Habit)</p>
+        <!--name ต้องเหมือนกันในกลุ่ม Radio เดียวกัน-->
+
+        <div>
+          <input
+            type="radio"
+            id="habit-chill"
+            name="dog_habit"
+            value="chilling"
+          />
+          <label for="habit-chill"
+            >Chilling (สโลว์ไลฟ์ เน้นนอนไม่เน้นวิ่ง)</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="habit-hyper"
+            name="dog_habit"
+            value="hyperactive"
+          />
+          <label for="habit-hyper"
+            >Hyperactive (ดีดเหมือนกินกาแฟมา 10 แก้ว)</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="habit-foodie"
+            name="dog_habit"
+            value="foodie"
+          />
+          <label for="habit-foodie"
+            >Foodie (หูไวเมื่อได้ยินเสียงแกะถุงขนม)</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="habit-stubborn"
+            name="dog_habit"
+            value="stubborn"
+          />
+          <label for="habit-stubborn"
+            >Stubborn (ดื้อเงียบ เรียกชื่อแล้วทำเป็นหูดับ)</label
+          >
+        </div>
+
+        <div>
+          <p>
+            <label for="note">รายละเอียดอื่นที่ต้องการแจ้งให้ฟาร์มทราบ</label>
+          </p>
+          <textarea
+            id="note"
+            name="dog_note"
+            rows="4"
+            placeholder="My pup is allergic to.."
+          ></textarea>
+        </div>
+
+        <div>
+          <input
+            type="checkbox"
+            id="terms"
+            name="accept_terms"
+            value="Accept"
+            required
+            checked
+          />
+          <label for="terms"
+            >Accept <a href="/terms">terms and conditions</a> from
+            Barbowl</label
+          >
+        </div>
+        <div>
+          <input type="checkbox" id="news" name="accept_news" value="yes" />
+          <label for="news">รับข่าวสารโปรโมชันขนมหมาล่าสุดทางอีเมล์</label>
+        </div>
+
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
