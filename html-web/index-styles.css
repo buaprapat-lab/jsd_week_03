@@ -1,0 +1,319 @@
+/* ═══════════════════════════════════════════════════
+   BARKBOWL — styles.css
+   Clean, organized CSS สำหรับ bootcamp project
+   ═══════════════════════════════════════════════════ */
+
+/* ── 1. CSS Variables (ตัวแปรสี / ฟอนต์) ──────────── */
+:root {
+  /* Colors */
+  --cloud-0: #ffffff;
+  --cloud-1: #f0f4f8;
+  --cloud-2: #d9e2ec;
+  --sky: #bcccdc;
+  --sky-dark: #6b9cc9;
+  --ink: #102a43;
+  --muted: #627d98;
+  --accent: #e07b39; /* สีส้มอุ่น ใช้ highlight ราคา / ปุ่ม */
+  --white: #ffffff;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Spacing */
+  --section-padding: 4rem 2rem;
+  --max-width: 900px;
+}
+
+/* ── 2. Reset & Base ────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* ทำให้ padding ไม่ทำให้กล่องพอง */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.7;
+  background: linear-gradient(
+    160deg,
+    var(--cloud-0) 0%,
+    var(--cloud-1) 35%,
+    var(--cloud-2) 70%,
+    var(--sky) 100%
+  );
+  min-height: 100vh;
+}
+
+/* ── 3. Typography ──────────────────────────────────── */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* clamp = ขยาย/หดตาม viewport */
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  color: var(--muted);
+  max-width: 65ch; /* 65 ตัวอักษร = ความกว้างอ่านง่ายที่สุด */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--cloud-2);
+  margin: 0 2rem;
+}
+
+/* ── 4. NAV ─────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(247, 249, 252, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); /* Safari support */
+  border-bottom: 1px solid rgba(107, 156, 201, 0.2);
+}
+
+nav .logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+nav .logo:hover {
+  opacity: 0.7;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: var(--ink);
+}
+
+/* ── 5. HERO ────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.dogs_emoji {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.3em;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 55ch;
+  margin: 0 auto 2rem;
+  color: var(--ink);
+}
+
+.hero h6 {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sky-dark);
+  font-weight: 400;
+}
+
+/* ── 6. ABOUT ───────────────────────────────────────── */
+.about {
+  padding: var(--section-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about h3 {
+  color: var(--muted);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.story-content {
+  display: flex; /* รูปกับข้อความเรียงข้างกัน */
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.founders-img {
+  width: 280px;
+  border-radius: 12px;
+  flex-shrink: 0; /* ไม่ให้รูปหดเมื่อหน้าจอแคบ */
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(16, 42, 67, 0.12);
+}
+
+.story-content p {
+  margin-bottom: 1rem;
+}
+
+.mission {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── 7. PRODUCTS ────────────────────────────────────── */
+.products {
+  padding: var(--section-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.product-list ol {
+  padding-left: 1.2rem; /* เยื้องหมายเลข */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-list li {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  border: 1px solid var(--cloud-2);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.product-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(16, 42, 67, 0.1);
+}
+
+.product-list li h3 {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* ── 8. BRANCHES ────────────────────────────────────── */
+#branches {
+  padding: var(--section-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+#branches > p {
+  margin-bottom: 2rem;
+}
+
+#branches ul {
+  list-style: none; /* เอาจุดออก เพราะเราจะ style เอง */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.branch-item {
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--cloud-2);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.branch-item:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.branch-item strong {
+  display: block;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.branch-item p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── 9. FOOTER (แนะนำให้เพิ่ม) ──────────────────────── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border-top: 1px solid var(--cloud-2);
+  margin-top: 2rem;
+}
+
+/* ── 10. Responsive (Mobile) ────────────────────────── */
+@media (max-width: 640px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 0.65rem;
+  }
+
+  .story-content {
+    flex-direction: column; /* รูปกับข้อความซ้อนกัน เมื่อหน้าจอแคบ */
+  }
+
+  .founders-img {
+    width: 100%;
+  }
+
+  #branches ul {
+    grid-template-columns: 1fr;
+  }
+}
